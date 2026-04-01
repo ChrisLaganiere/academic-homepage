@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry} % Better margins
+\usepackage{amsmath, amssymb, amsthm} % Essential math tools
+\usepackage{hyperref} % Clickable links/TOC
+\usepackage{xcolor} % Custom colors
+\usepackage{listings} % For code snippets
+\usepackage{enumitem} % Better control over lists
+\usepackage{ulem} % For underlining
+\usepackage{enumitem} % to enumerate important items with bolded numbers
+\usepackage{amsmath} % to highlight important equations with a box
+\usepackage{empheq}
+
+% --- Custom Math Environments ---
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+
+% --- Code Snippet Styling ---
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray}
+}
+
+\setlength{\parindent}{0pt}      % Sets indentation to zero
+\setlength{\parskip}{1em}        % Adds a gap between paragraphs
+
+% --- Document Info ---
+\title{CS 109: Intro to Probability \\ \large Lecture 1: Fundamentals of Probability}
+\author{Chris Laganiere}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Definitions}
+In probability, we often deal with sample spaces and events. 
+
+\begin{definition}[Sample Space]
+    The set of all possible outcomes of an experiment is called the \textbf{sample space}, denoted by $S$ or $\Omega$.
+\end{definition}
+
+\begin{definition}[Event]
+    A subset of the sample space, with some specific outcomes of an experiment, denoted by $E$.
+\end{definition}
+    
+\section{Fundamentals of Probability}
+An event $E$ is a subset of a sample space $S$:
+
+\begin{align}
+    \{ E \subseteq S \}
+\end{align}
+
+Examples:
+
+\begin{itemize}
+    \item Tossing a coin: $S = \{H, T\}$
+    \item 1 "Heads" on 2 flips: $S = \{[H, T], [H, H], [T, H]\}$
+\end{itemize}
+
+The measured probability of an event measured by the fraction of the time it occurs in experimentation.
+
+\begin{align}
+    P(E) = \lim_{n \to \infty} \frac{count(E)}{n}
+\end{align}
+
+Probability is always expressed from 0 to 1:
+
+\begin{empheq}[box=\fbox]{align}
+    0 \leq P(E) \leq 1
+\end{empheq}
+
+Equally likely outcomes are expressed with vertical pipes:
+
+\begin{align}
+    P(E) = \frac{\#event outcomes}{\# space outcomes} = \frac{|E|}{|S|}
+\end{align}
+
+\section{Axioms of Probability}
+
+\begin{enumerate}[label=\textbf{\arabic*.}, ref=\arabic*]
+    \item $0 \leq P(E) \leq 1$
+    \item $P(S) = 1$
+    \item if events $E$ and $F$ are mutually exclusive:
+        \begin{empheq}[box=\fbox]{align}
+            P(E \cup F) = P(E) + P(F)
+        \end{empheq}
+\end{enumerate}
+
+It's sometimes easier to find probability of the complement of an event rather than the probability of the event itself.
+\begin{align}
+    P(E \cup E^C) &= 1 \\
+                  &= P(E) + P(E^C)
+\end{align}
+
+The complement can be used to calculate the event's probability.
+
+\begin{empheq}[box=\fbox]{align}
+    P(E^C) &= 1 - P(E^C)
+\end{empheq}
+
+\end{document}

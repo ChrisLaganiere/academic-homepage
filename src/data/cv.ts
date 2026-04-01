@@ -61,3 +61,10 @@ export const publications = [
 	// 	abstract: 'Early research leading to the identification of uranium’s radioactive properties.',
 	// },
 ];
+
+export const classResources = [
+	{
+		title: 'Lecture 1 Notes',
+		link: '/documents/lecture-1-notes.pdf',
+	},
+];
