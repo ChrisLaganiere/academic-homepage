@@ -1,20 +1,45 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import { classResources } from '@/data/cv'
-import LinkList from '@/components/ui/LinkList.astro'
+import ProfilePictures from '@/assets/profile_pictures.jpg'
+import Hero from '@/components/ui/Hero.astro'
+
+import { profile } from '@/settings'
+const { fullName, title, institute } = profile
 
 ---
 
 <Layout>
 	<!-- Hero Section -->
-	<!-- <section class='flex items-center gap-12 border-b pb-12'>
+	<section class='flex items-center gap-12 border-b pb-12'>
 		<Hero
 			fullName={fullName}
 			title={title}
 			institute={institute}
 			profilePicture={ProfilePictures}
 		/>
-	</section> -->
+	</section>
+	<section class='py-12 border-b'>
+		<div class='flex-1'>
+			<p class='text-lg mb-6'>
+			I am participating in the Stanford Non-Degree Option to complete CS 109 and CS 229 as part of a dedicated sabbatical in 2026. My goal is to bridge a decade of expert-level software engineering with formal theoretical foundations in preparation for a full-time Master’s program in frontier ML systems in 2027.
+			</p>
+			<p class='text-lg mb-6'>
+			As a Staff Software Engineer at Ambience Healthcare, I led the technical development of ambient audio recording infrastructure used to capture patient visits and clinician dictation. These inputs power proprietary AI models for medical note and billing generation, saving clinicians significant time and generating financial ROI. My architectural decisions in this role were a primary differentiator in securing a strategic contract with the Cleveland Clinic after a competitive five-way pilot, during which we provided high-reliability offline recording capabilities that were unmatched by competitors. My team’s work was recently featured in the Oprah special “AI and the Future of Us,” narrated by Bill Gates, which showcased our mobile recording and note generation application in use at the Cleveland Clinic.
+			</p>
+			<p class='text-lg mb-6'>
+			Prior to Ambience, I spent seven years at Apple, most recently as a Senior Software Engineer. I contributed to a suite of global platforms, including iCloud.com and Apple’s K-12 education ecosystem, serving hundreds of millions of users. In this role, I architected an operating system framework for the collection of learning events across third-party iOS applications, feeding analytics systems powered by Apache Spark. I was responsible for providing the high-fidelity telemetry for these pipelines and subsequently presenting the results through robust iPad experiences that provided teachers with actionable "Insights" into student learning trends.
+			</p>
+			<p class='text-lg mb-6'>
+			While I have mastered the engineering required to build and ship production systems, and successfully contributed to the mission of big-data and ML-driven workflows by building the underlying “plumbing”, data collection, and user experiences, I have not yet had the opportunity to build the core models themselves. I am seeking to return to academia to transition from the instrumentation layer to the research layer.
+			</p>
+			<p class='text-lg mb-6'>
+			I have not taken formal coursework since graduating from UCLA in 2017, but I am dedicating a sabbatical in 2026 to preparing the mathematical foundations for a successful Master’s program, with Stanford Non-Degree Option as a key component. I have selected CS 109 (Introduction to Probability for Computer Scientists) to build the statistical foundation required for CS 229 (Machine Learning). Successfully completing these courses is a critical step in my transition from systems engineering to frontier technology research.
+			</p>
+			<p class='text-lg mb-6'>
+			My career has proven my ability to execute at the highest levels of industry. I am now ready to apply that same discipline to Stanford’s graduate-level curriculum to prepare for my future research in ML systems.
+			</p>
+		</div>
+	</section>
 
 	<!-- Research Areas -->
 	<!-- <section class='py-12 border-b'>
@@ -26,8 +51,8 @@ import LinkList from '@/components/ui/LinkList.astro'
 		<ArticleList listTitle='Recent Publications' listItems={publications} />
 	</section> -->
 
-	<LinkList listTitle='Lecture Notes' listItems={classResources.map(classResource => ({
+	<!-- <LinkList listTitle='Lecture Notes' listItems={classResources.map(classResource => ({
 		title: classResource.title,
 		link: classResource.link,
-	}))} />
+	}))} /> -->
 </Layout>

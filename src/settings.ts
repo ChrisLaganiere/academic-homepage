@@ -10,11 +10,11 @@ export const profile = {
 
 // Set equal to an empty string to hide the icon that you don't want to display
 export const social = {
-	email: '',
+	email: 'crafting@stanford.edu',
 	linkedin: 'https://www.linkedin.com/in/chris-laganiere/',
 	x: '',
 	bluesky: '',
-	github: '',
+	github: 'https://github.com/ChrisLaganiere',
 	gitlab: '',
 	scholar: '',
 	inspire: '',
@@ -23,14 +23,14 @@ export const social = {
 }
 
 export const template = {
-	website_url: 'https://localhost:4321', // Astro needs to know your site’s deployed URL to generate a sitemap. It must start with http:// or https://
+	website_url: 'https://stanford.edu', // Astro needs to know your site’s deployed URL to generate a sitemap. It must start with http:// or https://
 	menu_left: false,
 	transitions: true,
 	lightTheme: 'light', // Select one of the Daisy UI Themes or create your own
 	darkTheme: 'dark', // Select one of the Daisy UI Themes or create your own
 	excerptLength: 200,
 	postPerPage: 5,
-    base: '' // Repository name starting with /
+    base: '/~crafting' // Repository name starting with /
 }
 
 export const seo = {

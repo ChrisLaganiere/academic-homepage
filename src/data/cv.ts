@@ -64,7 +64,11 @@ export const publications = [
 
 export const classResources = [
 	{
-		title: 'Lecture 1 Notes',
+		title: 'Lecture 1: Fundamentals of Probability',
 		link: '/documents/lecture-1-notes.pdf',
+	},
+	{
+		title: 'Lecture 2: Conditional Probability and Bayes',
+		link: '/documents/lecture-2-notes.pdf',
 	},
 ];

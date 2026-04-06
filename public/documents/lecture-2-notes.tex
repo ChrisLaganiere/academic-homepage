@@ -1,0 +1,94 @@
+\documentclass[11pt]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry} % Better margins
+\usepackage{amsmath, amssymb, amsthm} % Essential math tools
+\usepackage{hyperref} % Clickable links/TOC
+\usepackage{xcolor} % Custom colors
+\usepackage{listings} % For code snippets
+\usepackage{enumitem} % Better control over lists
+\usepackage{ulem} % For underlining
+\usepackage{enumitem} % to enumerate important items with bolded numbers
+\usepackage{amsmath} % to highlight important equations with a box
+\usepackage{empheq}
+
+% --- Custom Math Environments ---
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+
+% --- Code Snippet Styling ---
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray}
+}
+
+\setlength{\parindent}{0pt}      % Sets indentation to zero
+\setlength{\parskip}{1em}        % Adds a gap between paragraphs
+
+% --- Document Info ---
+\title{CS 109: Intro to Probability \\ \large Lecture 2: Conditional Probability and Bayes}
+\author{Chris Laganiere}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Definitions}
+We can calculate probabilities given some events already observed, said "conditioning on F" meaning "given F already observed".
+
+Syntax:
+
+\begin{empheq}[box=\fbox]{align}
+    P(E|F) = \frac{P(EF)}{P(F)}
+\end{empheq}
+
+Reminders about general probability syntax:
+
+\begin{itemize}
+    \item $\cup$, OR, union
+    \item $\cap$, AND, intersect. Shorthand $E,F$, $E \text{ and } F$, $EF$, $|EF|$
+\end{itemize}
+
+\begin{definition}[Chain Rule (aka Product Rule)]
+    \begin{empheq}[box=\fbox]{align}
+        P(EF) = \frac{P(E|F)}{P(F)}
+    \end{empheq}
+\end{definition}
+
+The Chain Rule can be expanded with any number of events:
+
+\begin{align}
+    P(E_1,E_2,...,E_n) = P(E_1)P(E_2|E_1)...P(E_n|E_1,...,E_{n-1})
+\end{align}
+
+\begin{definition}[Law of Total Probability]
+    \begin{empheq}[box=\fbox]{align}
+        P(E) &= P(EF) + P(EF^C) \\
+             &= P(E|F)P(F) + P(E|F^C)P(F^C)
+    \end{empheq}
+\end{definition}
+
+\begin{definition}[Bayes Theorem]
+    \begin{empheq}[box=\fbox]{align}
+        P(F|E) = \frac{P(E|F)P(F)}{P(E)}
+    \end{empheq}
+\end{definition}
+
+Remember that we can expand probability, we often need to use the expanded form for Bayes' theorem, using the Law of Total Probability for the denominator:
+
+\begin{align}
+    P(F|E) = \frac{P(E|F)P(F)}{P(E|F)P(F)+P(E|F^C)P(F^C)}
+\end{align}
+
+\end{document}

@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { classResources } from '@/data/cv'
+import LinkList from '@/components/ui/LinkList.astro'
+
+---
+
+<Layout>
+	<LinkList listTitle='Lecture Notes' listItems={classResources.map(classResource => ({
+		title: classResource.title,
+		link: classResource.link,
+	}))} />
+</Layout>
